@@ -28,7 +28,7 @@ jobs:
       - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
         with:
           install_command: npm install --legacy-peer-deps # default: npm ci
-          build_command: npm run build-storybook build-storybook # default: npm run build-storybook
+          build_command: npm run build-storybook # default: npm run build-storybook
           path: storybook-static # default: dist/storybook
           checkout: false # default: true
 
@@ -37,7 +37,7 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build-storybook # The folder the action should deploy.
+          FOLDER: storybook-static # The folder the action should deploy.
 
 
   # build_and_deploy:
