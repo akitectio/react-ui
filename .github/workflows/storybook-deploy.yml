@@ -5,18 +5,32 @@ on:
     branches:
       - main # Replace with your default branch
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# List of jobs
 jobs:
-  build_and_deploy:
+  deploy:
     runs-on: ubuntu-latest
+    # Job steps
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+      # Manual Checkout
+      - uses: actions/checkout@v3
 
-      - name: Install Dependencies
-        run: npm install  --legacy-peer-deps
+      # Set up Node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
 
-      - name: Build Storybook
-        run: npx build-storybook -o storybook-static
+      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+        with:
+          install_command: npm install --legacy-peer-deps # default: npm ci
+          build_command: npm run build-storybook build-storybook # default: npm run build-storybook
+          path: storybook-static # default: dist/storybook
+          checkout: false # default: true
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
@@ -24,3 +38,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: storybook-static # The folder the action should deploy.
+
+
+  # build_and_deploy:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@v2
+
+  #     - name: Install Dependencies
+  #       run: npm install  --legacy-peer-deps
+
+  #     - name: Build Storybook
+  #       run: npx build-storybook -o storybook-static
+
+  #     - name: Deploy to GitHub Pages
+  #       uses: JamesIves/github-pages-deploy-action@4.1.4
+  #       with:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #         BRANCH: gh-pages # The branch the action should deploy to.
+  #         FOLDER: storybook-static # The folder the action should deploy.
