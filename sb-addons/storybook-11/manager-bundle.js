@@ -1,0 +1,3 @@
+try{
+(()=>{var l=__STORYBOOK_ADDONS__,{addons:o,types:p,mockChannel:O}=__STORYBOOK_ADDONS__;var u=__STORYBOOK_THEMING__,{CacheProvider:x,ClassNames:S,Global:R,ThemeProvider:y,background:C,color:N,convert:k,create:a,createCache:v,createGlobal:B,createReset:D,css:G,darken:K,ensure:Y,ignoreSsrWarning:I,isPropValid:P,jsx:A,keyframes:E,lighten:H,styled:M,themes:U,typography:j,useTheme:w,withTheme:V}=__STORYBOOK_THEMING__;var n=a({base:"light",brandTitle:"React UI",brandUrl:"https://github.com/xdev-asia"}),s=n;o.setConfig({theme:s});})();
+}catch(e){ console.error("[Storybook] One of your manager-entries failed: " + import.meta.url, e); }
