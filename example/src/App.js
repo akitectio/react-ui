@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { Pages } from '@tdduydev/rs-base-component'
-import '@tdduydev/rs-base-component/dist/index.css'
+import { Pages } from '@xdev-asia/x-react-elements'
+// import '@xdev-asia/x-react-elements/dist/index.css'
 
 const App = () => {
   return <Pages.Login title='hieudz' text='Create React Library Example 😄' />

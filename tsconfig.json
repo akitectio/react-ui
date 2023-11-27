@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": false,
+        "jsx": "react-jsx",
+        "isolatedModules": false,
+        "resolveJsonModule": true,
+        "moduleResolution": "node" // Add this line
+    },
+    "include": [
+        "src/**/*",
+        ".storybook/storyBookTheming.tsx"
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts",
+        "**/*.test.ts",
+        "build"
+    ]
+}
