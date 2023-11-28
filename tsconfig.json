@@ -17,7 +17,20 @@
         "jsx": "react-jsx",
         "isolatedModules": false,
         "resolveJsonModule": true,
-        "moduleResolution": "node" // Add this line
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@scss/*": [
+                "./src/assets/scss/*"
+            ]
+        }
     },
     "include": [
         "src/**/*",

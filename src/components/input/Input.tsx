@@ -11,12 +11,12 @@ interface InputProps extends BaseInputProps {
   errorStyle?: CSSProperties
   groupClassName?: string
   labelClassName?: string
-  inputClassNae?: string
+  inputClassName?: string
 }
 
 const Input: React.FC<InputProps> = ({
   label,
-  inputClassNae,
+  inputClassName,
   placeholder,
   groupStyle,
   labelStyle,
@@ -25,7 +25,6 @@ const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const [field, meta] = useField(props)
-
   return (
     <div style={groupStyle} className={`form-group ${groupClassName}`}>
       {label && (
@@ -42,7 +41,7 @@ const Input: React.FC<InputProps> = ({
         {...field}
         {...props}
         placeholder={placeholder}
-        inputClassName={`form-control ${inputClassNae} ${
+        inputClassName={`form-control ${inputClassName} ${
           meta.touched && meta.error ? 'is-invalid' : null
         }`}
       />
@@ -53,4 +52,4 @@ const Input: React.FC<InputProps> = ({
   )
 }
 
-export { Input }
+export { Input, InputProps }
