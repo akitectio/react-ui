@@ -39,22 +39,3 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: storybook-static # The folder the action should deploy.
 
-
-  # build_and_deploy:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout Repository
-  #       uses: actions/checkout@v2
-
-  #     - name: Install Dependencies
-  #       run: npm install  --legacy-peer-deps
-
-  #     - name: Build Storybook
-  #       run: npx build-storybook -o storybook-static
-
-  #     - name: Deploy to GitHub Pages
-  #       uses: JamesIves/github-pages-deploy-action@4.1.4
-  #       with:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #         BRANCH: gh-pages # The branch the action should deploy to.
-  #         FOLDER: storybook-static # The folder the action should deploy.
