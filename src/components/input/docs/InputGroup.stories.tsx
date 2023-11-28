@@ -1,3 +1,4 @@
+import React from 'react'
 import { Meta, StoryObj } from '@storybook/react' // change Story to StoryObj
 import { InputGroup, InputGroupProps } from '../InputGroup'
 import { FaUser } from 'react-icons/fa'
