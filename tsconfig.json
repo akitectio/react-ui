@@ -14,7 +14,7 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "noEmit": false,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "isolatedModules": false,
         "resolveJsonModule": true,
         "moduleResolution": "node",
